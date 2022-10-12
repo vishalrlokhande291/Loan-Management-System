@@ -15,4 +15,7 @@ public class ApplicantService {
         applicantRepo.save(applicant);
         return "Added SucessFully";
     }
+    public Applicant getApplicantByMobile(String applicant_mobile){
+        return applicantRepo.findById(applicant_mobile).orElse(null);
+    }
 }

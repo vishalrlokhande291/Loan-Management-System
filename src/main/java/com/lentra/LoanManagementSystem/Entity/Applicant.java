@@ -14,8 +14,29 @@ public class Applicant {
     @Id
     private String aplicant_mobile;
     private String aplicant_email;
-//    private String aplicant_refId;
-//    private String aplicant_exRefId;
+    private String aplicant_refId;
+    private String aplicant_exRefId;
+
+
+    private PersonalDetails personalDetails;
+    private Address address;
+
+
+    public String getAplicant_refId() {
+        return aplicant_refId;
+    }
+
+    public void setAplicant_refId(String aplicant_refId) {
+        this.aplicant_refId = aplicant_refId;
+    }
+
+    public String getAplicant_exRefId() {
+        return aplicant_exRefId;
+    }
+
+    public void setAplicant_exRefId(String aplicant_exRefId) {
+        this.aplicant_exRefId = aplicant_exRefId;
+    }
 
     public String getAplicant_name() {
         return aplicant_name;

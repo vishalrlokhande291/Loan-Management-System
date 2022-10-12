@@ -16,7 +16,7 @@ public class ApplicantController {
     }
     @GetMapping("/applicant/{applicant_mobile}")
     public Applicant getApplicantByMobile(@PathVariable String applicant_mobile){
-        return applicantService.getApplicantByMobile(String applicant_mobile);
+        return applicantService.getApplicantByMobile(applicant_mobile);
     }
 
 }
