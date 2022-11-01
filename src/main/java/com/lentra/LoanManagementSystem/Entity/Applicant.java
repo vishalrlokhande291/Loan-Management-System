@@ -3,18 +3,18 @@ package com.lentra.LoanManagementSystem.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Document(collection="Applicant")
-public class BasicInfo {
+public class Applicant {
     private String aplicantName;
     @Id
-    private String aplicantMoble;
+    private String aplicantMobile;
     private String aplicantEmail;
     private String aplicantRefId;
     private String aplicantExRefId;
@@ -27,14 +27,14 @@ public class BasicInfo {
     private String applicantIncome;
 
 
-    @DBRef
+    @DocumentReference(lazy = true)
     private List<Address> addressList;
 
 
-    public BasicInfo(String aplicantName, String aplicantMoble, String aplicantEmail, String aplicantRefId, String aplicantExRefId, String applicantRefId, String applicantType, String applicantDOB, String applicantDOI, String applicantPan, String applicantUdyanNo, String applicantIncome) {
+    public Applicant(String aplicantName, String aplicantMoble, String aplicantEmail, String aplicantRefId, String aplicantExRefId, String applicantRefId, String applicantType, String applicantDOB, String applicantDOI, String applicantPan, String applicantUdyanNo, String applicantIncome) {
         super();
         this.aplicantName = aplicantName;
-        this.aplicantMoble = aplicantMoble;
+        this.aplicantMobile = aplicantMoble;
         this.aplicantEmail = aplicantEmail;
         this.aplicantRefId = aplicantRefId;
         this.aplicantExRefId = aplicantExRefId;
@@ -72,11 +72,11 @@ public class BasicInfo {
     }
 
     public String getAplicant_mobile() {
-        return aplicantMoble;
+        return aplicantMobile;
     }
 
     public void setAplicant_mobile(String aplicant_mobile) {
-        this.aplicantMoble = aplicant_mobile;
+        this.aplicantMobile = aplicant_mobile;
     }
 
     public String getAplicantEmail() {
