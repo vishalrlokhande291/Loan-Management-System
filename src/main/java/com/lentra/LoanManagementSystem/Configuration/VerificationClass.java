@@ -21,20 +21,20 @@ public class VerificationClass {
     private AdharCardServices adharCardServices;
 
     @GetMapping("/pan/{panNo}")
-    public Boolean panIsVerified(String panNO, String DOB, String name) {
+    public String panIsVerified(String panNO, String DOB, String name) {
         PanCard pan = panCardServices.getPanCardByPanNo(panNO);
         if (pan.getPanNo().equals(panNO) && pan.getDOB().equals(DOB) && pan.getName().equals(name))
-            return true;
+            return "true";
         else
-            return false;
+            return "false";
     }
 
     @GetMapping("/adhar/{adharNo}")
-    public Boolean adharIsVerified(String adharNO,String DOB, String name){
+    public String adharIsVerified(String adharNO,String DOB, String name){
         AdharCard adharCard=adharCardServices.getAdharCardByAdharNo(adharNO);
         if (adharCard.getAdharNo().equals(adharNO) && adharCard.getDOB().equals(DOB) && adharCard.getName().equals(name))
-            return true;
+            return "true";
         else
-            return false;
+            return "false";
     }
 }
